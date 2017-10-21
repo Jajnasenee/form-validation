@@ -8,8 +8,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="form1 col-md-12">
-				<form name="myform" onsubmit="return validation()">
-					FirstName: <br><input type="text" name="name" placeholder="Name"><br>
+                <form name="myform" onsubmit="return validation() && emailValidate()" method="post">
+                    Name: <br><input type="text" name="name" placeholder="Name"><br>
 					Mobile: <br><input type="text" id="ph" value="+91" disabled><input type="text" name="mobile" id="phone"><br>
 					E-mail: <br><input type="text" name="email" placeholder="E-mail"><br>
 					Message: <br><textarea cols="61" rows="10" name="msg"></textarea> <br><br><br>
@@ -20,20 +20,39 @@
 	</div>
 	<script type="text/javascript">
 		function validation(){
-
-			var p = document.forms["myform"]["name"].value;
-			var q = document.forms["myform"]["ph"].value;
-			var r = document.forms["myform"]["email"].value;
-			var s = document.forms["myform"]["msg"].value;
-			if(p=="") {
-				alert("please fill out the feild");
-				return false;
+			if(document.myform.name.value == "") {
+				alert("please fill your name");
+				document.myform.name.focus();
+                return false;
 			}
-			elseif(){
-				alert("");
-				return false;
+            if(document.myform.mobile.value == "" || document.myform.mobile.value.length !=10 || isNaN(document.myform.mobile.value)) {
+			    alert("please provide your phone number with 10 digit");
+                document.myform.mobile.focus();
+                return false;
 			}
+            if(document.myform.email.value == "") {
+				alert("please fill the email id");
+                document.myform.email.focus();
+                return false;
+			}
+            if(document.myform.msg.value == "") {
+				alert("write something in message");
+				document.myform.msg.focus();
+                return false;
+			}
+        return(true);
 		}
+        function emailValidate(){
+            var eval = document.myform.email.value;
+            atposition = eval.indexof("@");
+            dotposition = eval.lastIndexOf(".");
+            if(atposition < 1 || (dotposition - atposition < 2)){
+                alert("enter correct email id");
+                document.myform.email.value.focus();
+                return false;
+            }
+            return(true);
+        }
 
 	</script>
 </body>
