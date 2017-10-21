@@ -1,8 +1,117 @@
+<!DOCTYPE html>
 <html>
-    <head><title>Form validation</title></head>
-    <body>
-        <form>
-            <input type="text">
-        </form>
-    </body>
+<head>
+	<title>task1</title>
+	<style type="text/css">
+		input[type=text] {
+			width:30%;
+			border: 1px,solid,black;
+			margin-top: 10px;
+			margin-bottom: 15px;
+			padding: 11px 21px;
+		}
+		input[type=submit]{
+			padding: 7px 20px;
+			border-radius: 3px;
+			border: none;
+		}
+		#ph{
+			width: 20px;
+		}
+		#phone{
+			width: 25%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="form1 col-md-12">
+				<form name="myform" onsubmit="return validation()">
+					FirstName: <br><input type="text" name="name" placeholder="Name"><br>
+					Mobile: <br><input type="text" id="ph" value="+91" disabled><input type="text" name="mobile" id="phone"><br>
+					E-mail: <br><input type="text" name="email" placeholder="E-mail"><br>
+					Message: <br><textarea cols="61" rows="10" name="msg"></textarea> <br><br><br>
+					<input type="submit" name="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function validation(){
+
+			var p = document.forms["myform"]["name"].value;
+			var q = document.forms["myform"]["ph"].value;
+			var r = document.forms["myform"]["email"].value;
+			var s = document.forms["myform"]["msg"].value;
+			if(p=="") {
+				alert("please fill out the feild");
+				return false;
+			}
+			elseif(){
+				alert("");
+				return false;
+			}
+		}
+
+	</script>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+	<title>task1</title>
+	<style type="text/css">
+		input[type=text] {
+			width:30%;
+			border: 1px,solid,black;
+			margin-top: 10px;
+			margin-bottom: 15px;
+			padding: 11px 21px;
+		}
+		input[type=submit]{
+			padding: 7px 20px;
+			border-radius: 3px;
+			border: none;
+		}
+		#ph{
+			width: 20px;
+		}
+		#phone{
+			width: 25%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="form1 col-md-12">
+				<form name="myform" onsubmit="return validation()">
+					FirstName: <br><input type="text" name="name" placeholder="Name"><br>
+					Mobile: <br><input type="text" id="ph" value="+91" disabled><input type="text" name="mobile" id="phone"><br>
+					E-mail: <br><input type="text" name="email" placeholder="E-mail"><br>
+					Message: <br><textarea cols="61" rows="10" name="msg"></textarea> <br><br><br>
+					<input type="submit" name="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function validation(){
+
+			var p = document.forms["myform"]["name"].value;
+			var q = document.forms["myform"]["ph"].value;
+			var r = document.forms["myform"]["email"].value;
+			var s = document.forms["myform"]["msg"].value;
+			if(p=="") {
+				alert("please fill out the feild");
+				return false;
+			}
+			elseif(){
+				alert("");
+				return false;
+			}
+		}
+
+	</script>
+</body>
 </html>
