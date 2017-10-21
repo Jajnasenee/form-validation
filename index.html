@@ -2,13 +2,14 @@
 <html>
 <head>
     <title>task1</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 	<div class="container">
 		<div class="row">
 			<div class="form1 col-md-12">
-                <form name="myform" onsubmit="return validation() && emailValidate()" method="post">
+                <form name="myform" onsubmit="return emailValidate()" method="post">
                     Name: <br><input type="text" name="name" placeholder="Name"><br>
 					Mobile: <br><input type="text" id="ph" value="+91" disabled><input type="text" name="mobile" id="phone"><br>
 					E-mail: <br><input type="text" name="email" placeholder="E-mail"><br>
@@ -42,17 +43,19 @@
 			}
         return(true);
 		}
+
         function emailValidate(){
             var eval = document.myform.email.value;
-            atposition = eval.indexof("@");
+            atposition = eval.indexOf("@");
             dotposition = eval.lastIndexOf(".");
             if(atposition < 1 || (dotposition - atposition < 2)){
                 alert("enter correct email id");
-                document.myform.email.value.focus();
+                document.myform.email.focus();
                 return false;
             }
             return(true);
         }
+        
 
 	</script>
 </body>
